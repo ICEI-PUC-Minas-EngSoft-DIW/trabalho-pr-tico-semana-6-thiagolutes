@@ -1,10 +1,3 @@
-/* ════════════════════════════════════════
-   DEVHUB — styles.css  (Bootstrap v2.0)
-   Custom design tokens + component styles.
-   Layout responsivo delegado ao Bootstrap.
-   ════════════════════════════════════════ */
-
-/* ── DESIGN TOKENS ── */
 :root {
   --primary:        #250542;
   --primary-dark:   #120225;
@@ -30,7 +23,6 @@
   --shadow-glow:    0 0 24px rgba(167,139,250,0.25);
 }
 
-/* ── RESET & BASE ── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 html { scroll-behavior: smooth; }
@@ -49,62 +41,44 @@ a  { color: inherit; text-decoration: none; }
 
 img { display: block; width: 100%; height: 100%; object-fit: cover; }
 
-/* ── Neutralizar cor de fundo padrão do Bootstrap ── */
 .container, .container-xl, .container-fluid,
 .row { --bs-gutter-x: 1.5rem; }
 
-
-/* ════════════════════════════════════════
-   HEADER
-   Bootstrap colapsa o menu em mobile via
-   .navbar-collapse / data-bs-toggle.
-   ════════════════════════════════════════ */
 .header {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(18, 2, 37, 0.88);
+  background: rgba(18, 2, 37, 0.88) !important;
   backdrop-filter: blur(18px);
   border-bottom: 1px solid var(--border);
+  padding: 0;
 }
 
-/* header-inner: flexbox apenas em xl+ (Bootstrap d-xl-flex já cuida disso) */
 .header-inner {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 24px;
   padding: 0 32px;
   height: 68px;
-  flex-wrap: wrap;
 }
 
-/* Em mobile o header-inner vira coluna */
 @media (max-width: 1199px) {
-  .header-inner {
-    height: auto;
-    padding: 12px 20px;
-  }
-
-  /* Ocupa toda a largura no colapso */
-  .navbar-collapse {
-    width: 100%;
+  .header-inner { height: auto; padding: 10px 20px; flex-wrap: wrap; }
+  .navbar-collapse.show {
     padding: 8px 0 12px;
-    display: flex;
+    display: flex !important;
     flex-direction: column;
-    gap: 12px;
+    gap: 10px;
+    width: 100%;
   }
-
-  .header-nav {
-    flex-direction: column;
-    gap: 2px;
-  }
-
-  .search-form { max-width: 100%; }
+  .header-nav    { flex-direction: column; gap: 2px; }
+  .search-form   { max-width: 100%; margin: 0 !important; }
   .btn-cta-header { width: 100%; text-align: center; }
 }
 
-/* Logo */
+
+
+
+
 .header-logo {
   display: flex;
   align-items: center;
@@ -126,7 +100,6 @@ img { display: block; width: 100%; height: 100%; object-fit: cover; }
   color: var(--text);
 }
 
-/* Bootstrap navbar-toggler estilizado */
 .navbar-toggler {
   background: transparent;
   border: 1px solid var(--border-bright);
@@ -139,7 +112,6 @@ img { display: block; width: 100%; height: 100%; object-fit: cover; }
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28167,139,250,0.9%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
 
-/* Nav links */
 .header-nav {
   display: flex;
   gap: 4px;
@@ -160,7 +132,6 @@ img { display: block; width: 100%; height: 100%; object-fit: cover; }
   background: rgba(167,139,250,0.12);
 }
 
-/* Search */
 .search-form {
   display: flex;
   align-items: center;
@@ -203,7 +174,6 @@ img { display: block; width: 100%; height: 100%; object-fit: cover; }
 
 .search-form .search-btn:hover { color: var(--accent); }
 
-/* CTA Button */
 .btn-cta-header {
   padding: 8px 22px;
   background: var(--primary-light);
@@ -224,10 +194,6 @@ img { display: block; width: 100%; height: 100%; object-fit: cover; }
   box-shadow: 0 0 20px var(--accent-glow);
 }
 
-
-/* ════════════════════════════════════════
-   HERO
-   ════════════════════════════════════════ */
 .hero {
   position: relative;
   overflow: hidden;
@@ -305,9 +271,6 @@ img { display: block; width: 100%; height: 100%; object-fit: cover; }
   font-size: 1.1rem;
 }
 
-/* ── PATH CHOOSER
-   Usa Bootstrap row/col internamente,
-   o wrapper apenas fornece o estilo visual. ── */
 .path-chooser {
   width: 100%;
   margin-top: 16px;
@@ -330,8 +293,7 @@ img { display: block; width: 100%; height: 100%; object-fit: cover; }
 
 .path-card:hover { background: rgba(167,139,250,0.07); }
 
-/* Separador direito apenas em md+ (Bootstrap border-md-end não existe,
-   então usamos uma classe utilitária customizada) */
+
 @media (min-width: 768px) {
   .path-card--roadmap { border-right: 1px solid var(--border); }
 }
@@ -391,7 +353,6 @@ img { display: block; width: 100%; height: 100%; object-fit: cover; }
   transform: translateY(-2px);
 }
 
-/* ── HERO STATS ── */
 .hero-stats {
   position: relative;
   z-index: 1;
@@ -429,12 +390,6 @@ img { display: block; width: 100%; height: 100%; object-fit: cover; }
   background: var(--border);
 }
 
-
-/* ════════════════════════════════════════
-   SEÇÕES
-   Bootstrap container/row/col substituem
-   os antigos grids manuais.
-   ════════════════════════════════════════ */
 .section {
   padding: 90px 32px;
 }
@@ -476,10 +431,6 @@ img { display: block; width: 100%; height: 100%; object-fit: cover; }
 }
 
 
-/* ════════════════════════════════════════
-   ROADMAP CARDS
-   Layout: Bootstrap col-12 col-sm-6 col-xl-3
-   ════════════════════════════════════════ */
 .roadmap-card {
   background: var(--surface-2);
   border: 1px solid var(--border);
@@ -562,11 +513,6 @@ img { display: block; width: 100%; height: 100%; object-fit: cover; }
 
 .roadmap-card .link-arrow:hover { opacity: 0.8; }
 
-
-/* ════════════════════════════════════════
-   CURSO CARDS
-   Layout: Bootstrap col-12 col-md-6 col-lg-4
-   ════════════════════════════════════════ */
 .curso-card {
   background: var(--surface);
   border: 1px solid var(--border);
@@ -637,11 +583,6 @@ img { display: block; width: 100%; height: 100%; object-fit: cover; }
 .curso-card .curso-rating { font-size: 0.78rem; color: var(--yellow); }
 .curso-card .curso-price  { font-size: 0.9rem; font-weight: 700; color: var(--green); }
 
-
-/* ════════════════════════════════════════
-   CTA / NEWSLETTER
-   Layout: Bootstrap row col-12 col-md-6
-   ════════════════════════════════════════ */
 .section--cta {
   position: relative;
   overflow: hidden;
@@ -718,11 +659,6 @@ img { display: block; width: 100%; height: 100%; object-fit: cover; }
   transform: translateY(-2px);
 }
 
-
-/* ════════════════════════════════════════
-   FOOTER
-   Layout: Bootstrap row col-12 col-md-4 / col-md-8
-   ════════════════════════════════════════ */
 .footer {
   background: var(--primary-dark);
   border-top: 1px solid var(--border);
@@ -741,7 +677,6 @@ img { display: block; width: 100%; height: 100%; object-fit: cover; }
   margin-top: 4px;
 }
 
-/* footer-nav: flex horizontal com 3 colunas de links */
 .footer-nav {
   display: flex;
   gap: 48px;
