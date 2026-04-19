@@ -8,10 +8,11 @@ No trabalho dessa semana vamos alterar o projeto para que a responsividade da ho
 
 ## Informações Gerais
 
-- Nome:
-- Matricula:
-- Proposta de projeto escolhida:
-- Breve descrição sobre seu projeto:
+- Nome: Thiago Lutes de Castro
+- Matricula: 909420
+- Proposta de projeto escolhida: Temas e Conteúdos Associados
+- Breve descrição sobre seu projeto: Plataforma web para visualização de conteúdos de programação, incluindo cursos e vídeos organizados.
+
 
 ## Print da versão responsiva com Bootstrap [DESKTOP]
 

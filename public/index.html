@@ -1,12 +1,468 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DevHub — Aprenda. Evolua. Domine.</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5 CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom Styles (after Bootstrap for override) -->
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    
+
+  <!-- ═══════════════════════ HEADER ═══════════════════════ -->
+  <header class="header">
+    <div class="header-inner container-xl">
+
+      <!-- Logo -->
+      <div class="header-logo">
+        <span class="logo-icon">⬡</span>
+        <span class="logo-text">Dev<em>Hub</em></span>
+      </div>
+
+      <!-- Toggler (mobile) -->
+      <button class="navbar-toggler d-xl-none" type="button"
+              data-bs-toggle="collapse" data-bs-target="#mainNav"
+              aria-controls="mainNav" aria-expanded="false" aria-label="Menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Nav + Search + CTA -->
+      <div class="collapse navbar-collapse d-xl-flex align-items-center gap-3" id="mainNav">
+        <nav class="header-nav">
+          <a class="nav-link active" href="#">Home</a>
+          <a class="nav-link" href="#roadmaps">Roadmaps</a>
+          <a class="nav-link" href="#cursos">Cursos</a>
+          <a class="nav-link" href="#comunidade">Comunidade</a>
+        </nav>
+
+        <form class="search-form flex-grow-1" action="#" method="get">
+          <input class="search-input" type="text" name="q"
+                 placeholder="Buscar cursos, roadmaps…" autocomplete="off">
+          <button class="search-btn" type="submit">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                 stroke="currentColor" stroke-width="2.5">
+              <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+            </svg>
+          </button>
+        </form>
+
+        <button class="btn-cta-header flex-shrink-0">Entrar</button>
+      </div>
+
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- ═══════════════════════ HERO ═══════════════════════ -->
+    <section class="hero">
+      <div class="hero-bg-grid"></div>
+      <div class="hero-glow hero-glow--1"></div>
+      <div class="hero-glow hero-glow--2"></div>
+
+      <!-- Hero Content -->
+      <div class="hero-content container">
+        <span class="hero-badge">
+          Plataforma Dev Brasileira
+          <span style="color: rgb(27,187,27)">100% gratuita</span>
+        </span>
+        <h1 class="hero-title">Aprenda.<br>Evolua.<br><em>Domine.</em></h1>
+        <p class="hero-desc">
+          Do zero ao avançado. Siga roadmaps estruturados ou monte
+          sua própria trilha com cursos avulsos de alta qualidade.
+        </p>
+
+        <!-- Path Chooser — Bootstrap row para 2 colunas em md+ -->
+        <div class="path-chooser">
+          <div class="row g-0 w-100">
+            <div class="col-12 col-md-6">
+              <article class="path-card path-card--roadmap h-100">
+                <div class="path-card-icon">🗺</div>
+                <h2 class="path-card-title">Ir para Roadmaps</h2>
+                <p class="path-card-desc">
+                  Trilhas completas e ordenadas para dominar uma stack do início ao fim.
+                </p>
+                <a class="path-card-btn path-card-btn--primary" href="#roadmaps">
+                  Explorar Roadmaps →
+                </a>
+              </article>
+            </div>
+
+            <!-- Divider (visível apenas em md+) -->
+            <div class="col-auto d-none d-md-flex">
+              <div class="path-divider"><span>ou</span></div>
+            </div>
+
+            <!-- Divider horizontal (visível apenas em mobile) -->
+            <div class="col-12 d-md-none text-center py-2" style="color:var(--text-dim);font-size:.85rem;border-top:1px solid var(--border)">ou</div>
+
+            <div class="col-12 col-md">
+              <article class="path-card path-card--cursos h-100">
+                <div class="path-card-icon">🎓</div>
+                <h2 class="path-card-title">Cursos Avulsos</h2>
+                <p class="path-card-desc">
+                  Escolha tópicos específicos e aprenda no seu ritmo sem compromisso com a ordem.
+                </p>
+                <a class="path-card-btn path-card-btn--outline" href="#cursos">
+                  Ver Cursos →
+                </a>
+              </article>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Stats — Bootstrap row -->
+      <div class="hero-stats container">
+        <div class="row justify-content-center align-items-center g-0">
+          <div class="col-auto">
+            <div class="stat">
+              <span class="stat-number">120+</span>
+              <span class="stat-label">Cursos</span>
+            </div>
+          </div>
+          <div class="col-auto"><div class="stat-divider"></div></div>
+          <div class="col-auto">
+            <div class="stat">
+              <span class="stat-number">18</span>
+              <span class="stat-label">Roadmaps</span>
+            </div>
+          </div>
+          <div class="col-auto"><div class="stat-divider"></div></div>
+          <div class="col-auto">
+            <div class="stat">
+              <span class="stat-number">48k</span>
+              <span class="stat-label">Devs ativos</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════ ROADMAPS ═══════════════════════ -->
+    <section class="section" id="roadmaps">
+      <div class="section-inner container">
+
+        <header class="section-header">
+          <span class="section-tag">Trilhas Estruturadas</span>
+          <h2 class="section-title">Roadmaps</h2>
+          <p class="section-subtitle">
+            Percursos completos pensados por especialistas para levar você do zero à senioridade.
+          </p>
+        </header>
+
+        <!-- Bootstrap grid: 1 col mobile → 2 col tablet → 4 col desktop -->
+        <div class="row g-4">
+          <div class="col-12 col-sm-6 col-xl-3">
+            <article class="roadmap-card h-100">
+              <div class="roadmap-card-cover">
+                <img src="https://picsum.photos/id/10/400/200" alt="Frontend">
+                <span class="roadmap-badge">Iniciante → Sênior</span>
+              </div>
+              <div class="roadmap-card-body">
+                <h3 class="roadmap-card-title">Frontend Developer</h3>
+                <p class="roadmap-card-desc">HTML, CSS, JavaScript, React e mais.</p>
+                <div class="roadmap-tags">
+                  <span class="tag">HTML</span>
+                  <span class="tag">CSS</span>
+                  <span class="tag">React</span>
+                </div>
+                <div class="roadmap-card-footer">
+                  <span class="roadmap-info">42 módulos</span>
+                  <a class="link-arrow" href="#">Ver trilha →</a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-12 col-sm-6 col-xl-3">
+            <article class="roadmap-card h-100">
+              <div class="roadmap-card-cover">
+                <img src="https://picsum.photos/id/20/400/200" alt="Backend">
+                <span class="roadmap-badge">Iniciante → Sênior</span>
+              </div>
+              <div class="roadmap-card-body">
+                <h3 class="roadmap-card-title">Backend Developer</h3>
+                <p class="roadmap-card-desc">Java, Spring Boot, APIs REST, SQL e NoSQL.</p>
+                <div class="roadmap-tags">
+                  <span class="tag">Java</span>
+                  <span class="tag">Spring</span>
+                  <span class="tag">SQL</span>
+                </div>
+                <div class="roadmap-card-footer">
+                  <span class="roadmap-info">55 módulos</span>
+                  <a class="link-arrow" href="#">Ver trilha →</a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-12 col-sm-6 col-xl-3">
+            <article class="roadmap-card h-100">
+              <div class="roadmap-card-cover">
+                <img src="https://picsum.photos/id/30/400/200" alt="DevOps">
+                <span class="roadmap-badge">Intermediário</span>
+              </div>
+              <div class="roadmap-card-body">
+                <h3 class="roadmap-card-title">DevOps &amp; Cloud</h3>
+                <p class="roadmap-card-desc">Docker, Kubernetes, CI/CD, AWS e Azure.</p>
+                <div class="roadmap-tags">
+                  <span class="tag">Docker</span>
+                  <span class="tag">K8s</span>
+                  <span class="tag">AWS</span>
+                </div>
+                <div class="roadmap-card-footer">
+                  <span class="roadmap-info">38 módulos</span>
+                  <a class="link-arrow" href="#">Ver trilha →</a>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-12 col-sm-6 col-xl-3">
+            <article class="roadmap-card h-100">
+              <div class="roadmap-card-cover">
+                <img src="https://picsum.photos/id/40/400/200" alt="Data Science">
+                <span class="roadmap-badge">Intermediário</span>
+              </div>
+              <div class="roadmap-card-body">
+                <h3 class="roadmap-card-title">Data Science &amp; IA</h3>
+                <p class="roadmap-card-desc">Python, ML, redes neurais e LLMs.</p>
+                <div class="roadmap-tags">
+                  <span class="tag">Python</span>
+                  <span class="tag">ML</span>
+                  <span class="tag">LLMs</span>
+                </div>
+                <div class="roadmap-card-footer">
+                  <span class="roadmap-info">49 módulos</span>
+                  <a class="link-arrow" href="#">Ver trilha →</a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════ CURSOS ═══════════════════════ -->
+    <section class="section section--dark" id="cursos">
+      <div class="section-inner container">
+
+        <header class="section-header">
+          <span class="section-tag">Aprenda no seu ritmo</span>
+          <h2 class="section-title">Cursos em Destaque</h2>
+          <p class="section-subtitle">Escolha pelo que você precisa agora. Sem ordem obrigatória.</p>
+        </header>
+
+        <!-- Bootstrap grid: 1 col mobile → 2 col md → 3 col lg -->
+        <div class="row g-4">
+
+          <div class="col-12 col-md-6 col-lg-4">
+            <article class="curso-card h-100">
+              <div class="curso-card-img-wrap">
+                <img src="https://picsum.photos/id/1/400/220" alt="Curso HTML e CSS">
+                <span class="curso-level curso-level--basic">Iniciante</span>
+              </div>
+              <div class="curso-card-body">
+                <span class="curso-category">Web</span>
+                <h3 class="curso-card-title">HTML &amp; CSS do Zero</h3>
+                <p class="curso-card-meta">Canal Dev  •  8h de conteúdo  •  2.3k alunos</p>
+                <div class="curso-card-footer">
+                  <span class="curso-rating">★★★★★ 4.9</span>
+                  <span class="curso-price">Grátis</span>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-12 col-md-6 col-lg-4">
+            <article class="curso-card h-100">
+              <div class="curso-card-img-wrap">
+                <img src="https://picsum.photos/id/2/400/220" alt="Curso Java">
+                <span class="curso-level curso-level--inter">Intermediário</span>
+              </div>
+              <div class="curso-card-body">
+                <span class="curso-category">Backend</span>
+                <h3 class="curso-card-title">Java Moderno com Spring Boot</h3>
+                <p class="curso-card-meta">Canal Dev  •  22h de conteúdo  •  5.1k alunos</p>
+                <div class="curso-card-footer">
+                  <span class="curso-rating">★★★★★ 4.8</span>
+                  <span class="curso-price">R$ 49</span>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-12 col-md-6 col-lg-4">
+            <article class="curso-card h-100">
+              <div class="curso-card-img-wrap">
+                <img src="https://picsum.photos/id/3/400/220" alt="Curso Angular">
+                <span class="curso-level curso-level--inter">Intermediário</span>
+              </div>
+              <div class="curso-card-body">
+                <span class="curso-category">Frontend</span>
+                <h3 class="curso-card-title">Angular 17 na Prática</h3>
+                <p class="curso-card-meta">Canal Dev  •  18h de conteúdo  •  3.7k alunos</p>
+                <div class="curso-card-footer">
+                  <span class="curso-rating">★★★★☆ 4.6</span>
+                  <span class="curso-price">R$ 39</span>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-12 col-md-6 col-lg-4">
+            <article class="curso-card h-100">
+              <div class="curso-card-img-wrap">
+                <img src="https://picsum.photos/id/4/400/220" alt="SQL Server">
+                <span class="curso-level curso-level--basic">Iniciante</span>
+              </div>
+              <div class="curso-card-body">
+                <span class="curso-category">Banco de Dados</span>
+                <h3 class="curso-card-title">SQL Server Completo</h3>
+                <p class="curso-card-meta">Canal Dev  •  12h de conteúdo  •  1.8k alunos</p>
+                <div class="curso-card-footer">
+                  <span class="curso-rating">★★★★★ 4.7</span>
+                  <span class="curso-price">R$ 29</span>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-12 col-md-6 col-lg-4">
+            <article class="curso-card h-100">
+              <div class="curso-card-img-wrap">
+                <img src="https://picsum.photos/id/5/400/220" alt="Docker">
+                <span class="curso-level curso-level--adv">Avançado</span>
+              </div>
+              <div class="curso-card-body">
+                <span class="curso-category">DevOps</span>
+                <h3 class="curso-card-title">Docker &amp; Containers</h3>
+                <p class="curso-card-meta">Canal Dev  •  15h de conteúdo  •  4.2k alunos</p>
+                <div class="curso-card-footer">
+                  <span class="curso-rating">★★★★★ 4.9</span>
+                  <span class="curso-price">R$ 59</span>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-12 col-md-6 col-lg-4">
+            <article class="curso-card h-100">
+              <div class="curso-card-img-wrap">
+                <img src="https://picsum.photos/id/6/400/220" alt="Python">
+                <span class="curso-level curso-level--basic">Iniciante</span>
+              </div>
+              <div class="curso-card-body">
+                <span class="curso-category">Data</span>
+                <h3 class="curso-card-title">Python para Iniciantes</h3>
+                <p class="curso-card-meta">Canal Dev  •  10h de conteúdo  •  6.5k alunos</p>
+                <div class="curso-card-footer">
+                  <span class="curso-rating">★★★★★ 5.0</span>
+                  <span class="curso-price">Grátis</span>
+                </div>
+              </div>
+            </article>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════ CTA / NEWSLETTER ═══════════════════════ -->
+    <section class="section section--cta" id="comunidade">
+      <div class="cta-glow"></div>
+      <div class="section-inner container">
+        <!-- Bootstrap row: 1 col mobile → 2 col md -->
+        <div class="row align-items-center g-5">
+
+          <div class="col-12 col-md-6">
+            <div class="cta-text">
+              <span class="section-tag">Fique por dentro</span>
+              <h2 class="section-title">Receba novidades e conteúdos gratuitos</h2>
+              <p class="section-subtitle">Novos cursos, roadmaps atualizados e dicas direto no seu e-mail.</p>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-6">
+            <form class="cta-form" action="#" method="post">
+              <div class="cta-form-group">
+                <label class="cta-label" for="nome">Seu nome</label>
+                <input class="cta-input" type="text" id="nome" name="nome"
+                       placeholder="Ex: Maria Silva" required>
+              </div>
+              <div class="cta-form-group">
+                <label class="cta-label" for="email">E-mail</label>
+                <input class="cta-input" type="email" id="email" name="email"
+                       placeholder="maria@email.com" required>
+              </div>
+              <button class="btn-submit" type="submit">Quero receber →</button>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══════════════════════ FOOTER ═══════════════════════ -->
+  <footer class="footer">
+    <div class="container" style="max-width:1200px">
+
+      <!-- Bootstrap row: empilhado no mobile, lado a lado no md+ -->
+      <div class="row g-5 mb-5">
+
+        <div class="col-12 col-md-4">
+          <div class="footer-brand">
+            <span class="logo-icon">⬡</span>
+            <span class="logo-text">Dev<em>Hub</em></span>
+            <p class="footer-tagline">Aprenda. Evolua. Domine.</p>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-8">
+          <nav class="footer-nav">
+            <div class="footer-nav-col">
+              <span class="footer-nav-title">Plataforma</span>
+              <a href="#">Roadmaps</a>
+              <a href="#">Cursos</a>
+              <a href="#">Comunidade</a>
+              <a href="#">Blog</a>
+            </div>
+            <div class="footer-nav-col">
+              <span class="footer-nav-title">Empresa</span>
+              <a href="#">Sobre nós</a>
+              <a href="#">Trabalhe conosco</a>
+              <a href="#">Termos de uso</a>
+              <a href="#">Privacidade</a>
+            </div>
+            <div class="footer-nav-col">
+              <span class="footer-nav-title">Redes Sociais</span>
+              <a href="#">GitHub</a>
+              <a href="#">LinkedIn</a>
+              <a href="#">YouTube</a>
+              <a href="#">Discord</a>
+            </div>
+          </nav>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 DevHub — Feito com ☕ no Brasil</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
